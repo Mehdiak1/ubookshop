@@ -29,8 +29,11 @@ export const Block = props => {
         </f-cc>
 
         <f-csb style={{width:"100%" , padding:"5px 0"}}>
-            <f-12><sp-2/><sp-2/></f-12>
-            <c-x style={{direction:"ltr"}}>
+            
+            <img src="https://irmapserver.ir/qepal/cart.svg" style={{width:30,height:30,objectFit:"contain"}}/>
+
+            
+            <c-x style={{direction:"ltr" , margin:"0 5px"}}>
                 <f-12><del>۱۰۰۰۰ تومان</del></f-12>
                 <f-15>۱۵۰۰۰ تومان</f-15>
             </c-x>

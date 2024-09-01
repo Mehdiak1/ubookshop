@@ -24,14 +24,15 @@ export const Block = props => {
                
             }} />
 
-        <f-cc>
+        <f-cc style={{width:"100%",padding:"5px 0"}}>
             <f-15>hiiiiiiiiii</f-15>
         </f-cc>
 
-        <f-csb style={{backgroundColor:"pink",width:"100%"}}>
-            <f-12><sp-2/>11111<sp-2/></f-12>
-            <c-x>
-                <f-15></f-15>
+        <f-csb style={{width:"100%" , padding:"5px 0"}}>
+            <f-12><sp-2/><sp-2/></f-12>
+            <c-x style={{direction:"ltr"}}>
+                <f-12><del>۱۰۰۰۰ تومان</del></f-12>
+                <f-15>۱۵۰۰۰ تومان</f-15>
             </c-x>
         </f-csb>
 

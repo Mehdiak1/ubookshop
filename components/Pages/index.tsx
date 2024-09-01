@@ -13,19 +13,20 @@ import { Block } from './Block';
 
 
 export default p => Component(p, Page);
-const Page: PageEl = (props, state:{
-  form:string,
-  book:{title:string , author:string , country:string , imageLink:string , price:number , 
-    language:string , pages:number
+const Page: PageEl = (props, state: {
+  form: string,
+  book: {
+    title: string, author: string, country: string, imageLink: string, price: number,
+    language: string, pages: number
   }
-  cart:Array<string>
+  cart: Array<string>
 }, refresh, getProps) => {
 
   let styles = global.styles
   let name = "خوش آمدید"
 
 
-console.log(state)
+  console.log(state)
 
   return (
     <div style={{ direction: "rtl", minHeight: "11vh", }}>
@@ -68,13 +69,18 @@ console.log(state)
           <f-15>{(state.book.pages as number).toLocaleString("fa-IR")}</f-15>
         </f-c>
 
-        <g-b style={{backgroundColor: "#9DC3B0"}} onClick={()=>{
-         
-          state.cart.push(state.book.title)
-          state.form = null
-          refresh()
-        }}>
-          <f-13>افزودن به سبد خرید</f-13>
+        <g-b style={{
+          backgroundColor:
+            state.cart.includes(state.book.title) ? "#D8A7A7" : "#9DC3B0"
+        }}
+
+          onClick={() => {
+
+            state.cart.push(state.book.title)
+            state.form = null
+            refresh()
+          }}>
+          {state.cart.includes(state.book.title) ? <f-13>حذف از سبد خرید </f-13> : <f-13>افزودن به سبد خرید</f-13>}
         </g-b >
 
 

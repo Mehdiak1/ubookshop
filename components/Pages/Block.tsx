@@ -3,9 +3,9 @@
 export const Block = props => {
 
 
-    if(!props.state.faves)
+    if(!props.state.cart)
     {
-        props.state.faves = []
+        props.state.cart = []
     }
 
     return <c-c style={{
@@ -24,19 +24,22 @@ export const Block = props => {
                
             }} />
 
-        <f-cc style={{width:"100%",padding:"5px 0"}}>
-            <f-15>{props.book.title}</f-15>
+        <f-cc style={{width:"100%",padding:"5px 8px",height:40 , direction:"ltr"}}>
+            <f-12>{props.book.title}</f-12>
         </f-cc>
         <hr style={{width:"80%" , opacity:0.2 , margin:"0 2px"}}/>
 
         <f-csb style={{width:"100%" , padding:"5px 0"}}>
             
-            <img src="https://irmapserver.ir/qepal/cart.svg" style={{width:30,height:30,objectFit:"contain", margin:"0 10px"}}/>
+            <img src={props.state.cart.includes(props.book.title)?
+            "https://irmapserver.ir/qepal/ok.svg":
+            "https://irmapserver.ir/qepal/cart.svg"}
+             style={{width:25,height:25,objectFit:"contain", margin:"0 10px"}}/>
 
             
             <c-x style={{direction:"ltr" , margin:"0 10px"}}>
-                <f-12><del>۱۰۰۰۰ تومان</del></f-12>
-                <f-15>۱۵۰۰۰ تومان</f-15>
+                <f-12><del>{(props.book.price as number).toLocaleString("fa-IR")}تومان</del></f-12>
+                <f-15>{(props.book.price*0.8 as number).toLocaleString("fa-IR")}تومان</f-15>
             </c-x>
         </f-csb>
 

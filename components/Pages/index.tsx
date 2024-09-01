@@ -25,7 +25,7 @@ const Page: PageEl = (props, state:{
   let name = "خوش آمدید"
 
 
-
+console.log(state)
 
   return (
     <div style={{ direction: "rtl", minHeight: "11vh", }}>
@@ -69,13 +69,10 @@ const Page: PageEl = (props, state:{
         </f-c>
 
         <g-b style={{backgroundColor: "#9DC3B0"}} onClick={()=>{
-          // if(!state.faves)
-          // {
-          //   state.faves = []
-          // }
-          // state.faves.push(state.book.title)
-          // state.form = null
-          // refresh()
+         
+          state.cart.push(state.book.title)
+          state.form = null
+          refresh()
         }}>
           <f-13>افزودن به سبد خرید</f-13>
         </g-b >

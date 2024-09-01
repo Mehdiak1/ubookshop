@@ -25,8 +25,27 @@ const Page: PageEl = (props, state: {
   let styles = global.styles
   let name = "خوش آمدید"
 
+  let total_price=0
 
-  console.log(state)
+  
+  if(!state.cart)
+    {
+      state.cart = []
+    }
+
+  for(let title of state.cart)
+  {
+    let book = props.books.find(b=> b.title==title)
+    if(book)
+    {
+      total_price += (book.price*0.8)
+    }
+
+  }
+
+
+
+
 
   return (
     <div style={{ direction: "rtl", minHeight: "11vh", }}>
@@ -75,16 +94,39 @@ const Page: PageEl = (props, state: {
         }}
 
           onClick={() => {
+            if(state.cart.includes(state.book.title))
+            {
+              state.cart=state.cart.filter(bookname=> state.book.title != bookname)
+              state.form = null
+              refresh()
+            }
 
-            state.cart.push(state.book.title)
-            state.form = null
-            refresh()
+            else
+            {
+              state.cart.push(state.book.title)
+              state.form = null
+              refresh()
+            }
+
+           
           }}>
           {state.cart.includes(state.book.title) ? <f-13>حذف از سبد خرید </f-13> : <f-13>افزودن به سبد خرید</f-13>}
         </g-b >
 
 
       </WindowFloat> : null}
+
+
+      <Window title='سبد خرید' style={{ margin: 10, width: "calc(100% - 20px)"}}>
+
+        <f-cse style={{width:"100%",height:60}}>
+          <f-14>مجموع قابل پرداخت :{total_price.toLocaleString("fa-IR")} تومان</f-14>
+          <f-14>تعداد کتاب ها :{state.cart.length.toLocaleString("fa-IR")} عدد</f-14>
+
+        </f-cse>
+
+
+      </Window>
 
 
       <Window title={name}

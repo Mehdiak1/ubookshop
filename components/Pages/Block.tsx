@@ -10,7 +10,7 @@ export const Block = props => {
 
     return <c-c style={{
         width: 150, flex: 1, minWidth: 150,
-        position: "relative", backgroundColor:"white",borderRadius:10,margin:"10px"
+        position: "relative", backgroundColor:"white",borderRadius:10,margin:"10px",boxShadow:"0px 0px 9px 2px rgba(0,0,0,0.43)"
     }}>
 
         <img
@@ -25,7 +25,7 @@ export const Block = props => {
             }} />
 
         <f-cc style={{width:"100%",padding:"5px 0"}}>
-            <f-15>hiiiiiiiiii</f-15>
+            <f-15>{props.book.title}</f-15>
         </f-cc>
         <hr style={{width:"80%" , opacity:0.2 , margin:"0 2px"}}/>
 

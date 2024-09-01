@@ -8,15 +8,15 @@ export const Block = props => {
         props.state.faves = []
     }
 
-    return <f-x style={{
-        width: 150, height: 200, flex: 1, minWidth: 150,
+    return <c-c style={{
+        width: 150, flex: 1, minWidth: 150,
         position: "relative"
     }}>
 
         <img
             className={global.styles.hover}
             src={props.book.imageLink}
-            style={{ width: 150, height: 200, objectFit: "fill", flex: 1, minWidth: 150 }}
+            style={{ width: 150, height: 200, objectFit: "fill",  minWidth: 150 }}
             onClick={() => {
                 props.state.form = "bookspecs"
                 props.state.book = props.book
@@ -24,13 +24,17 @@ export const Block = props => {
                
             }} />
 
-        {props.state.faves.includes(props.book.title) ?
-            <img src="https://irmapserver.ir/research/0/heart.png"
-                style={{
-                    height: 30, width: 30, objectFit: "contain",
-                    position: "absolute", bottom: 10, right: 10
-                }} /> : null}
+        <f-cc>
+            <f-15>hiiiiiiiiii</f-15>
+        </f-cc>
 
-    </f-x>
+        <f-csb style={{backgroundColor:"pink",width:"100%"}}>
+            <f-12><sp-2/>11111<sp-2/></f-12>
+            <c-x>
+                <f-15></f-15>
+            </c-x>
+        </f-csb>
+
+    </c-c>
 }
 
